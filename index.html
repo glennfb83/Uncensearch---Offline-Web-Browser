@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Uncensearch — Offline</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="logo">
+        <div class="icon">U</div>
+        <div>
+          <h1>Uncensearch</h1>
+          <p class="lead">Offline local search — typo tolerant & case-insensitive</p>
+        </div>
+      </div>
+      <div class="meta">
+        <div class="kbd">Offline</div>
+        <div class="muted">Local items: <span id="count-badge">125</span></div>
+      </div>
+    </header>
+
+    <section class="search-card" aria-label="Search area">
+      <div class="search-row">
+        <div class="search-input">
+          <input id="searchBox" type="search" placeholder="Search Uncensearch (try: how to make cookies)" autocomplete="off" />
+          <ul id="suggestions" class="suggestions" hidden></ul>
+        </div>
+        <div class="controls">
+          <button id="searchBtn" class="small">Search</button>
+          <button id="addBtn" class="small">Add Item</button>
+          <button id="resetBtn" class="small">Reset DB</button>
+        </div>
+      </div>
+      <div class="help-row">
+        <div class="muted">Not case sensitive • typo tolerant • use ↑ ↓ Enter to pick</div>
+        <div class="muted">Tip: press <span class="kbd">Enter</span> to search</div>
+      </div>
+    </section>
+
+    <div class="main">
+      <aside class="sidebar" aria-label="Sidebar">
+        <div class="side-section">
+          <h3>Preinstalled Topics</h3>
+          <div id="prelist"></div>
+        </div>
+
+        <div class="side-section">
+          <h4>Search History</h4>
+          <div id="history" class="history-list"></div>
+        </div>
+
+        <div class="side-section">
+          <h4>Favorites</h4>
+          <div id="favorites"></div>
+        </div>
+
+        <div class="footer">Uncensearch — purely local. Data saved to your browser's storage.</div>
+      </aside>
+
+      <main class="content" id="content" aria-live="polite">
+        <h2 id="mainTitle">Welcome to Uncensearch</h2>
+        <div class="muted" id="intro">Type anything in the box above to search the local knowledge base. Try typos — it's tolerant.</div>
+        <div id="mainBody" style="margin-top:16px">
+          <div class="no-results">Pick an item from the left or search for something.</div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
