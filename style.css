@@ -1,39 +1,69 @@
-:root{
-  --bg:#071226; --card:#0b1220; --accent:#7dd3fc; --muted:#94a3b8; --glass: rgba(255,255,255,0.03);
-  --radius:12px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #fff;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  transition: background 0.3s, color 0.3s;
 }
-*{box-sizing:border-box}
-html,body{height:100%;margin:0;background:linear-gradient(180deg,#021022 0%, #071526 100%);color:#e6eef6}
-.app {max-width:1100px;margin:28px auto;padding:20px}
-header{display:flex;gap:16px;align-items:center;margin-bottom:14px}
-.logo{display:flex;align-items:center;gap:12px}
-.logo .icon{width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:700;color:#002}
-h1{margin:0;font-size:20px}
-p.lead{margin:0;color:var(--muted);font-size:13px}
-.search-card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 6px 24px rgba(2,6,23,0.6)}
-.search-row{display:flex;gap:12px}
-.search-input{flex:1;position:relative}
-input[type="search"]{width:100%;padding:14px 16px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:var(--glass);color:inherit;font-size:15px;outline:none}
-.controls{display:flex;gap:8px}
-button{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 12px;border-radius:10px;color:inherit;cursor:pointer}
-.small{padding:8px 10px;font-size:13px}
-.suggestions{position:absolute;left:0;right:0;top:56px;background:linear-gradient(180deg,#071526,#071726);border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.03);max-height:320px;box-shadow:0 8px 40px rgba(2,6,23,0.6);z-index:30}
-.suggestions li{padding:10px 12px;list-style:none;cursor:pointer;border-bottom:1px dashed rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center}
-.suggestions li:hover{background:rgba(255,255,255,0.02)}
-.main{display:grid;grid-template-columns:360px 1fr;gap:18px;margin-top:18px}
-.sidebar{background:var(--card);padding:12px;border-radius:var(--radius);height:72vh;overflow:auto}
-.side-section{margin-bottom:14px}
-.item{padding:10px;border-radius:8px;margin-bottom:8px;background:linear-gradient(180deg,transparent,rgba(255,255,255,0.01));cursor:pointer;border:1px solid rgba(255,255,255,0.02)}
-.item:hover{transform:translateY(-3px);transition:all .12s}
-.title{font-weight:600}
-.muted{color:var(--muted);font-size:13px}
-.content{background:var(--card);padding:18px;border-radius:var(--radius);min-height:72vh;overflow:auto}
-.no-results{padding:18px;border-radius:10px;background:rgba(255,255,255,0.02);margin-top:8px}
-.tag{display:inline-block;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.02);margin-right:6px;font-size:12px;color:var(--muted)}
-.actions{display:flex;gap:8px;margin-top:8px}
-.footer{color:var(--muted);font-size:13px;margin-top:12px}
-.search-meta{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:13px}
-.history-list{display:flex;flex-direction:column;gap:6px}
-.kbd{background:rgba(255,255,255,0.03);padding:4px 8px;border-radius:6px;font-size:12px}
-.help-row{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
-@media (max-width:980px){ .main{grid-template-columns:1fr} .sidebar{height:auto} .logo h1{display:none}}
+
+.container {
+  text-align: center;
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+#searchInput {
+  width: 80%;
+  max-width: 500px;
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  outline: none;
+  transition: all 0.2s;
+}
+
+#searchInput:focus {
+  border-color: #4285f4;
+  box-shadow: 0 0 5px #4285f4;
+}
+
+#results {
+  margin-top: 20px;
+  text-align: left;
+  max-width: 600px;
+}
+
+.result {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.result:hover {
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.settings {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.settings select {
+  margin-left: 4px;
+}
